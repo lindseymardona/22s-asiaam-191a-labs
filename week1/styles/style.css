@@ -16,7 +16,7 @@ body{
 
 header{
     grid-area: header;
-    text-align: center;
+    text-align: left;
 }
 
 #footer{
