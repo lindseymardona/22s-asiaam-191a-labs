@@ -22,8 +22,6 @@ header{
 #footer{
     grid-area: footer;
     text-align: center;
-    bottom:0;
-    osition: absolute;
 }
 
 .main{
