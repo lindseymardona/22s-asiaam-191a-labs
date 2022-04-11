@@ -30,6 +30,15 @@ header{
     text-align: center;
 }
 
+div.parent{
+	text-align: center;
+}
+
+ul{ 
+	display: inline-block; 
+	text-align: left; 
+}
+
 #contents{
     grid-area: content;
 }
