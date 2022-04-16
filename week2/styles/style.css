@@ -14,6 +14,10 @@ body{
     /* height: 100vh; */
 }
 
+*{
+    text-transform: lowercase;
+}
+
 a:hover {
     color: #e497bd;
     transition: 0.3s;
@@ -46,6 +50,10 @@ h1 {
     width: 90%;
     background-color: rgba(255, 255, 255, 0.4);
     margin: 0 auto;
+}
+
+.leaflet-popup-content {
+	text-align: center;
 }
 
 div.parent{
