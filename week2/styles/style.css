@@ -16,7 +16,8 @@ body{
 
 a:hover {
     color: #e497bd;
-   }
+    transition: 0.3s;
+}
 
 header{
     grid-area: header;
@@ -64,4 +65,11 @@ ul{
 #the_map{
     height: 70vh;
     grid-area: main_map;
+}
+
+#my_grid{
+    display: grid;
+    grid-template-columns: .3fr .3fr;
+    gap: 100px;
+    justify-content: center;
 }
