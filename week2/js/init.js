@@ -1,0 +1,1 @@
+console.log('helloOoOo scary javascript!1!1');
