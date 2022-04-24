@@ -1,0 +1,61 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "place": "jakarta, indonesia",
+          "color": "#CAABF9"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.89697265625,
+            -6.249776453227819
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "place": "fairfield, ca, usa",
+          "color": "#F9CAAB"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.0416259765625,
+            38.249033165465384
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "place": "castro valley, ca, usa",
+          "color": "#B7CEF3"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.07102298736574,
+            37.708982669608226
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "place": "westwood, ca, usa",
+          "color": "#F9BFD5"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -118.44120025634764,
+            34.064036693555465
+          ]
+        }
+      }
+    ]
+  }
