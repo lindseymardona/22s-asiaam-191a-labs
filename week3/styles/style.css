@@ -110,6 +110,9 @@ ul{
 #placeforbuttons button{
     background-color: #bbd8d4;
     border-radius: 6px;
+    border-color: rgb(240, 240, 240);
+    width: 5%;
+    padding: 5px;
     margin: 3px;
 }
 
