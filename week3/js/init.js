@@ -32,7 +32,7 @@ var JusticeMap_hispanic = L.tileLayer('https://www.justicemap.org/tile/{size}/hi
 var WaymarkedTrails_mtb = L.tileLayer('https://tile.waymarkedtrails.org/mtb/{z}/{x}/{y}.png', {
 	maxZoom: 18,
 	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://waymarkedtrails.org">waymarkedtrails.org</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-}).addTo(map); ;
+}).addTo(map); 
 
 
 //JavaScript let variable declaration to create a marker
