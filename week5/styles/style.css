@@ -1,0 +1,99 @@
+
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "header" "main_content" "footer";
+    background-color: #c38888;
+    gap: 10px;
+}
+
+header{
+    width: 100%;
+    grid-area: header;
+    justify-self: center;
+    align-self:center;
+    background-color: #c8c6c6;
+    padding-bottom: 0px;
+}
+
+h1{
+    justify-self: left;
+    font-weight: bold;
+    font-size: 60px;
+    color: #001f3d;
+    margin-left: 75px;
+}
+
+h2{
+    font-weight: normal;
+    font-size: 30px;
+    color: #001f3d;
+    margin-left: 75px;
+}
+
+#footer{
+    grid-area: footer;
+}
+
+.main{
+    grid-area: main_content;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "main_map content";
+    display: grid;
+}
+
+#contents{
+    grid-area: content; 
+    display: grid;
+    /* grid-template-rows: 1fr 3fr;  */
+    grid-template-rows: 1fr; 
+    grid-template-areas: "buttonHome" "survey"
+}
+
+#theSurvey{
+    grid-area: survey; 
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+}
+
+#placeForButtons{
+    grid-area: buttonHome;
+    display:grid;
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    padding-left:20px;
+    padding-right:20px;
+}
+
+#placeForButtons button{
+    background-color: #cbd3a6;
+    border-radius: 6px;
+    border-color: #faf0d3;
+    height: 40px;
+    width: 95%;
+    padding: 5px;
+    margin: 5px;
+    transition-duration: 0.4s;
+    font-size: 20px;
+}
+
+#placeForButtons button:hover{
+    background-color: #faf0d3; 
+}
+
+#the_map{
+    /* height:80vh; */
+    grid-area: main_map;
+}
+
+#footer{
+    margin-top: 1em;
+    grid-area: footer;
+    text-align: center;
+    height: 1vh;
+}
