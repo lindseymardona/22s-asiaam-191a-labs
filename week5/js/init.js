@@ -12,16 +12,16 @@ var NASAGIBS_ViirsEarthAtNight2012 = L.tileLayer('https://map1.vis.earthdata.nas
 	format: 'jpg',
 	time: '',
 	tilematrixset: 'GoogleMapsCompatible_Level'
-}).addTo(map); ;
+    }).addTo(map); ;
 var JusticeMap_hispanic = L.tileLayer('https://www.justicemap.org/tile/{size}/hispanic/{z}/{x}/{y}.png', {
-	attribution: '<a href="http://www.justicemap.org/terms.php">Justice Map</a>',
-	size: 'county',
-	bounds: [[14, -180], [72, -56]]
-}).addTo(map); ;
+        attribution: '<a href="http://www.justicemap.org/terms.php">Justice Map</a>',
+        size: 'county',
+        bounds: [[14, -180], [72, -56]]
+    }).addTo(map); ;
 var WaymarkedTrails_mtb = L.tileLayer('https://tile.waymarkedtrails.org/mtb/{z}/{x}/{y}.png', {
-	maxZoom: 18,
-	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://waymarkedtrails.org">waymarkedtrails.org</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-}).addTo(map); 
+        maxZoom: 18,
+        attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://waymarkedtrails.org">waymarkedtrails.org</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+    }).addTo(map); ;
 
 // create a function to add markers
 function addMarker(data){
