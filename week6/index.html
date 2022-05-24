@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>International Students and Access to Opportunity</title>
+        <!-- hint: remember to change your page title! -->
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+        <!-- Leaflet's css-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+        <!-- Leaflet's JavaScript-->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <script src="js/papaparse.min.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <!-- space for a menu -->
+            <div id="logo">
+                <a href="index.html"><img src="candy.gif" alt="[Candy]" style="width:150px;height:auto;"></a>
+            </div>
+            <div id="text">
+                <h1> 
+                    Sweet Eats
+                </h1>
+
+                <h2>
+                    I love eating sweets and trying new ones! Please tell me about the best sweets you've ever had~! 
+                </h2>
+            </div>
+        </header>
+
+        <div class="main">
+            <div id="contents">
+                <!-- page contents can go here -->
+                <div id="placeForButtons"></div>
+                <div id="theSurvey">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdXk275R39ZwGtp7d_qW9ydf4nmnIl4Vo8p9MMWjHXfNUfaYA/viewform?embedded=true" width="100%" height="790" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                </div>
+            </div>
+            <div id="the_map"></div>
+        </div>
+        <div id="footer">
+            Copyright (2022)
+        </div>
+        <script src="js/init.js"></script>
+    </body>
+</html>

@@ -1,0 +1,103 @@
+
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "header" "main_content" "footer";
+    background-color: #c4b8ce;
+    gap: 10px;
+}
+
+header{
+    width: 100%;
+    grid-area: header;
+    justify-self: center;
+    align-self:center;
+    background-color: #fcfcfc;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    padding-top: 30px;
+    grid-template-columns: 0.1fr 1fr;
+    display: grid;
+    grid-template-areas: "logo" "text";
+}
+
+h1{
+    justify-self: left;
+    font-weight: bold;
+    font-size: 60px;
+    color: #12003d;
+    margin-left: 30px;
+}
+
+h2{
+    font-weight: normal;
+    font-size: 30px;
+    color: #12003d;
+    margin-left: 30px;
+}
+
+#footer{
+    grid-area: footer;
+}
+
+.main{
+    grid-area: main_content;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "main_map content";
+    display: grid;
+}
+
+#contents{
+    grid-area: content; 
+    display: grid;
+    grid-template-rows: 0.1fr 1fr; 
+    grid-template-areas: "buttonHome" "survey"
+}
+
+#theSurvey{
+    grid-area: survey; 
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+}
+
+#placeForButtons{
+    grid-area: buttonHome;
+    display:grid;
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    padding-left:20px;
+    padding-right:20px;
+}
+
+#placeForButtons button{
+    background-color: #c8e1e6;
+    border-radius: 6px;
+    border-color: #d3e4fa;
+    height: 40px;
+    width: 95%;
+    padding: 5px;
+    margin: 5px;
+    transition-duration: 0.4s;
+    font-size: 20px;
+}
+
+#placeForButtons button:hover{
+    background-color: #f1c6d9; 
+}
+
+#the_map{
+    /* height:80vh; */
+    grid-area: main_map;
+}
+
+#footer{
+    margin-top: 1em;
+    grid-area: footer;
+    text-align: center;
+    height: 1vh;
+}
