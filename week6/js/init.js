@@ -4,29 +4,40 @@ let mapOptions = {'center': [34.0709,-118.444],'zoom':5}
 // use the variables
 const map = L.map('the_map').setView(mapOptions.center, mapOptions.zoom);
 
-var NASAGIBS_ViirsEarthAtNight2012 = L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
-	attribution: 'Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (<a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.',
-	bounds: [[-85.0511287776, -179.999999975], [85.0511287776, 179.999999975]],
-	minZoom: 1,
-	maxZoom: 8,
-	format: 'jpg',
-	time: '',
-	tilematrixset: 'GoogleMapsCompatible_Level'
-    }).addTo(map); ;
-var JusticeMap_hispanic = L.tileLayer('https://www.justicemap.org/tile/{size}/hispanic/{z}/{x}/{y}.png', {
-        attribution: '<a href="http://www.justicemap.org/terms.php">Justice Map</a>',
-        size: 'county',
-        bounds: [[14, -180], [72, -56]]
-    }).addTo(map); ;
-var WaymarkedTrails_mtb = L.tileLayer('https://tile.waymarkedtrails.org/mtb/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://waymarkedtrails.org">waymarkedtrails.org</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-    }).addTo(map); ;
+var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd',
+	maxZoom: 20
+}).addTo(map);
+
+
+// Add an object to save markers
+let markers = {};
+
+let circleOptions = {
+    radius: 8,
+    fillColor: "#f1c6d9",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.5
+}
 
 // create a function to add markers
 function addMarker(data){
-    L.marker([data['lat'],data['lng']]).addTo(map).bindPopup(`<h2>${data['What\'s your favorite sweet eat restaurant/shop?']}</h2> <h3>${data['What\'s your favorite thing to order there and why?']}</h3>`)
-    createButtons(data['lat'],data['lng'],data['What\'s your favorite sweet eat restaurant/shop?'])
+    const sweetLocation = data['What\'s your favorite sweet eat restaurant/shop?'];
+    const order = data['What\'s your favorite thing to order there and why?'];
+    markers[sweetLocation] = L.circleMarker([data.lat,data.lng], circleOptions).addTo(map).bindPopup(`<h2>${sweetLocation}</h2> <h3>${order}</h3>`)
+    createButtons(data.lat,data.lng,sweetLocation)
+
+    // if (blah == blah){
+    //     circleOptions.fillColor = bleh
+    // }
+    // else{
+    //     circleOptions.fillColor = blah
+    // }
+    // https://stackoverflow.com/questions/25683871/assign-id-to-marker-in-leaflet    
+    markers[sweetLocation]._id = sweetLocation;
     return data.Location
 }
 
@@ -37,8 +48,11 @@ function createButtons(lat,lng,title){
     newButton.setAttribute("lat",lat); // sets the latitude 
     newButton.setAttribute("lng",lng); // sets the longitude 
     newButton.addEventListener('click', function(){
-        map.flyTo([lat,lng]); //this is the flyTo from Leaflet
+        map.flyTo([lat,lng], 8);
+
+        markers[title].openPopup();
     })
+    console.log(markers[title])
     const spaceForButtons = document.getElementById('placeForButtons')
     spaceForButtons.appendChild(newButton);//this adds the button to our page.
 }
