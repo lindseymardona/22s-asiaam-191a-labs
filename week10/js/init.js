@@ -52,6 +52,8 @@ function toggleNonEnglishLayer(){
 }
 
 Esri_WorldGrayCanvas.addTo(map);
+let pulsingIcon1 = L.icon.pulse({iconSize:[5,5],color:'gray',fillColor:'blue'});
+let pulsingIcon2 = L.icon.pulse({iconSize:[5,5],color:'gray',fillColor:'orange'});
 
 // add layer control box
 // L.control.layers(null,layers).addTo(map);
@@ -62,13 +64,13 @@ Esri_WorldGrayCanvas.addTo(map);
 
 function addMarker(data){
     if(data['Is your English your first language?'] == "Yes"){
-        circleOptions.fillColor = "red"
-        englishFirst.addLayer(L.circleMarker([data.lat,data.lng],circleOptions).bindPopup(`<h2>English First Language</h2>`))
+        // circleOptions.fillColor = "red"
+        englishFirst.addLayer(L.marker([data.lat,data.lng],{icon: pulsingIcon1})).bindPopup(`<h2>English First Language</h2>`);
         createButtons(data.lat,data.lng,data.Location)
         }
     else{
-        circleOptions.fillColor = "blue"
-        nonEnglishFirst.addLayer(L.circleMarker([data.lat,data.lng],circleOptions).bindPopup(`<h2>Non-English First Language</h2>`))
+        // circleOptions.fillColor = "blue"
+        nonEnglishFirst.addLayer(L.marker([data.lat,data.lng],{icon: pulsingIcon2}).bindPopup(`<h2>Non-English First Language</h2>`))
         createButtons(data.lat,data.lng,data.Location)
     }
     return data
